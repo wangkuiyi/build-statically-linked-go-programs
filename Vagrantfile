@@ -9,6 +9,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "release" do |release|
     release.vm.provision "shell", inline: <<-SHELL
+apt-get update
+apt-get install -y git
+
 cd ~
 wget –quiet -c https://storage.googleapis.com/golang/go1.7.1.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.7.1.linux-amd64.tar.gz
