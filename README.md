@@ -4,7 +4,14 @@
 ## Conclusion
 
 We can build our Go programs, as long as they don't depend on `cgo`,
-into a fully statically linked executable binary file.
+into a fully statically linked executable binary file, as long as we
+use `CGO_ENABLED=0` with `go build/install/get`.  For example:
+
+```
+CGO_ENABLED=0 go get github.com/wangkuiyi/build-statically-linked-go-programs/hello
+```
+
+And this works for both Linux and Mac OS X.
 
 This is simplifies the development of servers and distributed systems,
 since we don't need to deploy dependent shared libraries onto the
