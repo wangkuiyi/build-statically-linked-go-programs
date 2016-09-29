@@ -128,7 +128,7 @@ ldd: hello: Not a valid dynamic program
    ```
 
 
-We can see that in all experiments, as long as we use `CGO_ENABLED=1`,
+We can see that in all experiments, as long as we use `CGO_ENABLED=0`,
 we get fully statically linked executable file.
 
 <!--  LocalWords:  cgo http libc issuecomment Vagrantfile VMs cd pre
