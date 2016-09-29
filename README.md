@@ -13,7 +13,7 @@ CGO_ENABLED=0 go get github.com/wangkuiyi/build-statically-linked-go-programs/he
 
 And this works for both Linux and Mac OS X.
 
-This is simplifies the development of servers and distributed systems,
+This simplifies the development of servers and distributed systems,
 since we don't need to deploy dependent shared libraries onto the
 cluster.
 
@@ -32,7 +32,7 @@ statically linked executable binary file.
 that the standard Go package "`net/http` do not have a pure go
 implementation at this point".  This matches with my recent experience
 that if my program depends on and depends only on `net/http`, `go
-build` generates a executable file depending on `libc.so`.  However,
+build` generates an executable file depending on `libc.so`.  However,
 is it possible that I build my program that depends on `net/http` into
 a fully statically linked file?
 
@@ -42,7 +42,7 @@ from
 I'd have to build the Go compiler with `CGO_ENABLED=0` specified,
 before I can use the compiler to build my program into a statically
 linked file.  However, the following experiments show that I don't
-have to rebuilt the Go compiler, but only need to use `CGO_ENABLED=0`
+have to rebuild the Go compiler, but only need to use `CGO_ENABLED=0`
 with `go build my-program.go`.
 
 
